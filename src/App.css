@@ -1,0 +1,78 @@
+form {
+  max-width: 500px;
+}
+
+.input-group {
+  margin-bottom: 24px;
+}
+
+label {
+  box-sizing: border-box;
+  min-width: 0px;
+  display: inline-flex;
+  color: rgb(9, 14, 36);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+input {
+  resize: vertical;
+  box-sizing: border-box;
+  min-width: 0px;
+  width: 100%;
+  appearance: none;
+  border: 1px solid rgb(218, 222, 237);
+  border-radius: 2px;
+  padding: 7px;
+  background-color: rgb(255, 255, 255);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  color: rgb(9, 14, 36);
+  font-size: 15px;
+  line-height: 24px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 2px 4px;
+}
+
+input:focus {
+  border-color: rgb(102, 99, 253);
+  outline: none;
+  box-shadow: none;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  user-select: none;
+  box-sizing: border-box;
+  appearance: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  align-self: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  border: 0px;
+  border-radius: 4px;
+  line-height: 16px;
+  height: 40px;
+  min-width: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(102, 99, 253);
+  cursor: pointer;
+}
+
+.error {
+  box-sizing: border-box;
+  min-width: 0px;
+  color: rgb(154, 28, 28);
+  font-size: 12px;
+}
