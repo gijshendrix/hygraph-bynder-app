@@ -122,7 +122,7 @@ function TableAsset({
         ...style,
       }}
     >
-      {media.type === "IMAGE" ? (
+      {media.type.toLowerCase() === "image" ? (
         <img 
           src={media.files["thumbnail"].url}
           style={{

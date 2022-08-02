@@ -39,13 +39,13 @@ export function FullScreenPreview({
     >
       <CloseModalButton closeModal={onClose} />
 
-      {media.type === "IMAGE" ? (
+      {media.type.toLowerCase() === "image" ? (
          <img 
           src={media.files["webImage"].url}
           style={{ maxWidth: "100%", margin: "auto", maxHeight: "100%" }}          
           alt={media.description} 
         />        
-      ) : media.type === "VIDEO" ? (
+      ) : media.type.toLowerCase() === "video" ? (
         <video 
         controls
         style={{

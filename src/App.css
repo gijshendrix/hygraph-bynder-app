@@ -6,7 +6,7 @@ form {
   margin-bottom: 24px;
 }
 
-label {
+.input-label {
   box-sizing: border-box;
   min-width: 0px;
   display: inline-flex;
@@ -18,7 +18,7 @@ label {
   margin-bottom: 8px;
 }
 
-input {
+.input-group > input {
   resize: vertical;
   box-sizing: border-box;
   min-width: 0px;
@@ -75,4 +75,37 @@ input:focus {
   min-width: 0px;
   color: rgb(154, 28, 28);
   font-size: 12px;
+}
+
+.checkbox-group {
+  box-sizing: border-box;
+  min-width: 0px;
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+.checkbox-label {
+  box-sizing: border-box;
+  min-width: 0px;
+  display: inline-flex;
+  color: rgb(9, 14, 36);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-input {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgb(157, 166, 199);
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  min-width: 0px;
+  cursor: pointer; 
+  accent-color: rgb(102, 99, 253);
 }

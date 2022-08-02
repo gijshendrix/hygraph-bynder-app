@@ -8,12 +8,13 @@ export type DialogProps = {
   isList: boolean;
   media: Media | Media[] | "";
   DEFAULT_DOMAIN: string;
+  ASSET_TYPES: string[];
 };
 
 export default function BynderDialog() {
   setNewRelicAttributes();
 
-  const { onCloseDialog, isList, media, DEFAULT_DOMAIN } =
+  const { onCloseDialog, isList, media, DEFAULT_DOMAIN, ASSET_TYPES } =
     useUiExtensionDialog<DialogReturn, DialogProps>();
 
   useLayoutEffect(() => {
@@ -23,7 +24,7 @@ export default function BynderDialog() {
       portal: {url: DEFAULT_DOMAIN || "", editable: false},
       language: "en_US",
       mode: isList ? "MultiSelect" : "SingleSelect",
-      assetTypes: ["image", "video"],
+      assetTypes: ASSET_TYPES, //["image", "video"],
       selectedAssets: isMediaList(media) ? media.map(item => item.databaseId) : isMediaType(media) ? [ media.databaseId ] : [],
       onSuccess: function (assets: Media[]) {
         if (isList) {
@@ -42,7 +43,7 @@ export default function BynderDialog() {
       }
     });  
 
-  }, [DEFAULT_DOMAIN, isList, media, onCloseDialog]);
+  }, [DEFAULT_DOMAIN, ASSET_TYPES, isList, media, onCloseDialog]);
 
   return (
     <div

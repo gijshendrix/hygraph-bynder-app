@@ -31,7 +31,10 @@ export function FormFieldRenderer() {
   if (!installation) return null;
   const config = {
     DEFAULT_DOMAIN: installation.config.defaultDomain as string,
+    //@ts-expect-error
+    ASSET_TYPES: installation.config.assetTypes as string[],
   };
+  console.log(config);
   return (
     <div
       style={{
@@ -71,6 +74,7 @@ export function FormFieldRenderer() {
               isList,
               media,
               DEFAULT_DOMAIN: config.DEFAULT_DOMAIN,
+              ASSET_TYPES: config.ASSET_TYPES,
             }).then((value) => {
               if (value) {
                 onChange(value);
@@ -196,7 +200,7 @@ function FormAsset({
       />
     );
   }
-  if (media.type === "IMAGE")
+  if (media.type.toLowerCase() === "image")
     return (
       <button
         onClick={onOpen}
@@ -237,7 +241,7 @@ function FormAsset({
       </button>
     );
 
-  if (media.type === "VIDEO")
+  if (media.type.toLowerCase() === "video")
     return (
       <video 
         controls
